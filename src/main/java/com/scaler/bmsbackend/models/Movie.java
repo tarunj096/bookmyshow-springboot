@@ -9,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 public class Movie extends BaseModel{
     private String name;
     private String description;
@@ -16,8 +17,9 @@ public class Movie extends BaseModel{
     private double rating;
 
     private Date releaseDate;
-    private List<Show> shows;
     @OneToMany
+    private List<Show> shows;
+
     @ManyToMany
     private List<Actor> actors;
 
@@ -29,7 +31,6 @@ public class Movie extends BaseModel{
     @Enumerated(EnumType.STRING) //table for Enum
     private List<Language> languages;
 }
-@Setter
 
 /*
 Movie: Shows 1:M
